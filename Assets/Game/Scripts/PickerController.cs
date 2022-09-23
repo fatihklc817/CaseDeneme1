@@ -13,7 +13,7 @@ public class PickerController : MonoBehaviour
     }
 
    
-    void Update()
+    void FixedUpdate()
     {
 
         transform.position = transform.position + Vector3.forward * Time.deltaTime * _forwardMoveSpeed;
