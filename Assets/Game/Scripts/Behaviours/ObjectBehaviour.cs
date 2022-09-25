@@ -11,7 +11,7 @@ namespace Game.Scripts.Behaviours
         [SerializeField] private Rigidbody _rigidbody;
         [SerializeField] private float _forcePower;
 
-        private bool _istriggeredOnce;
+        private bool _isTriggeredOnce;
 
         public void AddForceToObject()
         {
@@ -25,10 +25,10 @@ namespace Game.Scripts.Behaviours
 
                 if (other.CompareTag("TargetArea"))
                 {
-                    if (!_istriggeredOnce)
+                    if (!_isTriggeredOnce)
                     { 
                         other.GetComponent<TargetAreaBehaviour>().IncreaseObjectCounter();
-                        _istriggeredOnce = true;
+                        _isTriggeredOnce = true;
                     }
                 }
         }
