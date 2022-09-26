@@ -9,7 +9,7 @@ namespace Game.Scripts.Managers
 {
     public class EventManager : CustomBehaviour
     {
-
+        public event Action OnStartGame;
         public event Action OnLevelSucceed;
         public event Action OnLevelFailed;
 
@@ -20,6 +20,12 @@ namespace Game.Scripts.Managers
             base.Initialize(gameManager);
         }
 
+
+
+        public void StartGame()
+        {
+            OnStartGame?.Invoke();
+        }
 
         public void LevelSucceed()
         {

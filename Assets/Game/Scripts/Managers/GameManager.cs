@@ -14,6 +14,7 @@ namespace Game.Scripts.Managers
         public UIManager UIManager;
         public TargetAreaManager TargetAreaManager;
         public PickerController PickerController;
+        public LevelManager LevelManager;
 
 
 
@@ -21,9 +22,14 @@ namespace Game.Scripts.Managers
         {
             EventManager.Initialize(this);
             UIManager.Initialize(this);
+            LevelManager.Initialize(this);
             TargetAreaManager.Initialize(this);
             PickerController.Initialize(this);
         }
 
+        private void Start()
+        {
+            EventManager.StartGame();
+        }
     }
 }

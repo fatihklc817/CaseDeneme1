@@ -1,18 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Game.Scripts.Controllers;
+using Game.Scripts.Behaviours;
 
 public class LevelBehaviour : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public PickerController PickerController => _pickerController;
+    public TargetAreaBehaviour TargetAreaBehaviour => _targetAreaBehaviour;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    [SerializeField] PickerController _pickerController;
+    [SerializeField] TargetAreaBehaviour _targetAreaBehaviour;
 }

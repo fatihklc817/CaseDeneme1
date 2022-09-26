@@ -9,11 +9,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4788321609190852927}
-  - component: {fileID: 4788321609190852924}
   - component: {fileID: 4788321609190852899}
   - component: {fileID: 4788321609190852896}
   - component: {fileID: 4788321609190852897}
   - component: {fileID: 4788321609190852926}
+  - component: {fileID: 5900222285640753905}
+  - component: {fileID: 458879118986061016}
+  - component: {fileID: 1914718706789151494}
   m_Layer: 0
   m_Name: picker
   m_TagString: Picker
@@ -36,21 +38,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4788321609190852924
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4788321609190852925}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c1a02fb32268af4d9ad7654ac823114, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameManager: {fileID: 0}
-  _forwardMoveSpeed: 10
-  _horizontalMoveSpeed: 10
 --- !u!65 &4788321609190852899
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -106,6 +93,46 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 3
+--- !u!114 &5900222285640753905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4788321609190852925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ae9965d490286a418c290fcdf2d189f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pickerMovementBehaviour: {fileID: 458879118986061016}
+  _pickerTargetAreaDetector: {fileID: 1914718706789151494}
+--- !u!114 &458879118986061016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4788321609190852925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cd7378b59e6fbe45af69fbc3404928c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _forwardMoveSpeed: 10
+  _horizontalMoveSpeed: 10
+--- !u!114 &1914718706789151494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4788321609190852925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69cdd875d10fe9846a243e195fb11a90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4788321608403631154
 PrefabInstance:
   m_ObjectHideFlags: 0
