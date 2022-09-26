@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Game.Scripts.Managers;
 using UnityEngine;
 using TMPro;
 
@@ -13,18 +14,48 @@ namespace Game.Scripts.Behaviours
         [SerializeField] private int _areaTargetCount;
 
         private int _objectCount;
+        private TargetAreaManager _targetAreaManager;
+        private Coroutine _checkObjectCounterCoroutine;
 
 
-        private void Start()
+        public void Initialize(TargetAreaManager targetAreaManager)
         {
+            _targetAreaManager = targetAreaManager;
             _counterTextMesh.text = _objectCount.ToString() + (" / ") + _areaTargetCount;
+            
         }
+
+
 
         public void IncreaseObjectCounter()
         {
             
             _objectCount++;
             _counterTextMesh.text = _objectCount.ToString() + (" / ") + _areaTargetCount;
+            
+              
+            
+        }
+
+        public void StartCheckObjectCounterCo()
+        {
+            StartCoroutine(CheckObjectCounterCO());
+        }
+
+
+        IEnumerator CheckObjectCounterCO()
+        {
+            yield return new WaitForSeconds(3);
+            if (_objectCount < _areaTargetCount)
+            {
+                Debug.Log(_objectCount + _areaTargetCount);
+                _targetAreaManager.GameManager.EventManager.LevelFailed();
+            }
+            else if (_objectCount >= _areaTargetCount)
+            {
+                Debug.Log((_objectCount) + (_areaTargetCount));
+                _targetAreaManager.GameManager.EventManager.LevelSucceed();
+            }
         }
 
     }

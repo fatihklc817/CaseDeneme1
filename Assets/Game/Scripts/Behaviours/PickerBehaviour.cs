@@ -1,13 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Game.Scripts.Managers;
 
 namespace Game.Scripts.Behaviours
 {
 
     public class PickerBehaviour : MonoBehaviour
     {
-
+        [SerializeField] GameManager gameManager;
         [SerializeField] private float _forwardMoveSpeed;
         [SerializeField] private float _horizontalMoveSpeed;
 
@@ -63,15 +64,19 @@ namespace Game.Scripts.Behaviours
 
         private void CheckMyInsideBox()
         {
-            Collider[] hitColliders = Physics.OverlapBox(gameObject.transform.position,new Vector3(5,10,5),Quaternion.identity);
+            Collider[] hitColliders = Physics.OverlapBox(gameObject.transform.position,new Vector3(3.5f,10,5),Quaternion.identity);
+          
             for (int i = 0; i < hitColliders.Length; i++)
             {
                 if (hitColliders[i].gameObject.transform.CompareTag("Object"))
                 {
                     hitColliders[i].gameObject.GetComponent<ObjectBehaviour>().AddForceToObject();
+                  
                     
                 }
             }
+            gameManager.TargetAreaManager.TargetAreaBehaviour.StartCheckObjectCounterCo();
+
         }
       
 
@@ -88,7 +93,7 @@ namespace Game.Scripts.Behaviours
             
             if (true)
                
-                Gizmos.DrawWireCube(transform.position,new Vector3(5,10,5));
+                Gizmos.DrawWireCube(transform.position,new Vector3(3.5f,10,5));
         }
 
     }
