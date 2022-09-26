@@ -8,13 +8,13 @@ namespace Game.Scripts.Managers
 {
     public class TargetAreaManager : CustomBehaviour
     {
-
-        public TargetAreaBehaviour TargetAreaBehaviour;
+        public TargetAreaBehaviour TargetAreaBehaviour => _targetAreaBehaviour;
+        [SerializeField] TargetAreaBehaviour _targetAreaBehaviour;
 
         public override void Initialize(GameManager gameManager)
         {
             base.Initialize(gameManager);
-            TargetAreaBehaviour.Initialize(this);
+            _targetAreaBehaviour.Initialize(this);
             
         }
 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Game.Scripts.Utilities;
 using Game.Scripts.Managers;
+using Game.Scripts.Controllers;
 
 namespace Game.Scripts.Managers
 {
@@ -12,6 +13,7 @@ namespace Game.Scripts.Managers
         public EventManager EventManager;
         public UIManager UIManager;
         public TargetAreaManager TargetAreaManager;
+        public PickerController PickerController;
 
 
 
@@ -20,6 +22,7 @@ namespace Game.Scripts.Managers
             EventManager.Initialize(this);
             UIManager.Initialize(this);
             TargetAreaManager.Initialize(this);
+            PickerController.Initialize(this);
         }
 
     }

@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 4788321609190852896}
   - component: {fileID: 4788321609190852897}
   - component: {fileID: 4788321609190852926}
-  - component: {fileID: 4788321609190852898}
   m_Layer: 0
   m_Name: picker
   m_TagString: Picker
@@ -49,9 +48,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c1a02fb32268af4d9ad7654ac823114, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}
   _forwardMoveSpeed: 10
   _horizontalMoveSpeed: 10
-  _objectsThatInPicker: []
 --- !u!65 &4788321609190852899
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -63,8 +62,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.59021044, y: 4.03454, z: 3.3683858}
-  m_Center: {x: -1.1053369, y: 2.0764732, z: -1.154113}
+  m_Size: {x: 0.59021044, y: 6.35255, z: 3.3861375}
+  m_Center: {x: -1.1053369, y: 3.2354782, z: -1.1629889}
 --- !u!65 &4788321609190852896
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -76,8 +75,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.55745506, y: 4.087077, z: 3.4122036}
-  m_Center: {x: 1.6943791, y: 2.115612, z: -1.1842176}
+  m_Size: {x: 0.55745506, y: 6.3223577, z: 3.4122036}
+  m_Center: {x: 1.6943791, y: 3.2332523, z: -1.1842176}
 --- !u!65 &4788321609190852897
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -89,8 +88,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.3039541, y: 4.1154184, z: 0.55374527}
-  m_Center: {x: 0.30888462, y: 2.0577092, z: -2.5708518}
+  m_Size: {x: 3.3039541, y: 6.4134703, z: 0.55374527}
+  m_Center: {x: 0.30888462, y: 3.2067351, z: -2.5708518}
 --- !u!54 &4788321609190852926
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -107,19 +106,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 3
---- !u!65 &4788321609190852898
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4788321609190852925}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2.9430485, y: 4.473112, z: 3.266284}
-  m_Center: {x: 0.24725908, y: 1.736556, z: -0.94671726}
 --- !u!1001 &4788321608403631154
 PrefabInstance:
   m_ObjectHideFlags: 0
