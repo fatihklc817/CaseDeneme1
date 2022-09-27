@@ -8,11 +8,13 @@ using Game.Scripts.Managers;
 
 public class LevelBehaviour : MonoBehaviour
 {
+    public TargetAreaPanel TargetAreaPanel => _targetAreaPanel;
     public PickerController PickerController => _pickerController;
     public TargetAreaBehaviour TargetAreaBehaviour => _targetAreaBehaviour;
 
     [SerializeField] PickerController _pickerController;
     [SerializeField] TargetAreaBehaviour _targetAreaBehaviour;
+    [SerializeField] TargetAreaPanel _targetAreaPanel;
 
     public void Initialize(GameManager gameManager)
     {

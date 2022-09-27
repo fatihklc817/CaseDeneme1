@@ -9,6 +9,7 @@ namespace Game.Scripts.Managers
     public class TargetAreaManager : CustomBehaviour
     {
         public TargetAreaBehaviour TargetAreaBehaviour;
+        public TargetAreaPanel TargetAreaPanel;
         
 
         public override void Initialize(GameManager gameManager)
@@ -19,7 +20,9 @@ namespace Game.Scripts.Managers
         public void SetTargetArea()
         {
             TargetAreaBehaviour = GameManager.LevelManager.CurrentLevel.TargetAreaBehaviour;
+            TargetAreaPanel = GameManager.LevelManager.CurrentLevel.TargetAreaPanel;
             TargetAreaBehaviour.Initialize(this);
+            TargetAreaPanel.Initialize(TargetAreaBehaviour.ObjectCount, TargetAreaBehaviour.AreaTargetCount);
         }
 
 

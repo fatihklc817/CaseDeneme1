@@ -9,7 +9,8 @@ namespace Game.Scripts.Behaviours
 
     public class TargetAreaBehaviour : MonoBehaviour
     {
-
+        public int ObjectCount => _objectCount;
+        public int AreaTargetCount => _areaTargetCount;
         [SerializeField] private TextMeshPro _counterTextMesh;
         [SerializeField] private int _areaTargetCount;
 
@@ -21,7 +22,7 @@ namespace Game.Scripts.Behaviours
         public void Initialize(TargetAreaManager targetAreaManager)
         {
             _targetAreaManager = targetAreaManager;
-            _counterTextMesh.text = _objectCount.ToString() + (" / ") + _areaTargetCount;
+           // _counterTextMesh.text = _objectCount.ToString() + (" / ") + _areaTargetCount;
             _checkObjectCounterCoroutine = null;
             
         }
@@ -32,7 +33,8 @@ namespace Game.Scripts.Behaviours
         {
             
             _objectCount++;
-            _counterTextMesh.text = _objectCount.ToString() + (" / ") + _areaTargetCount;
+            _targetAreaManager.TargetAreaPanel.PopulateView(_objectCount);
+          //  _counterTextMesh.text = _objectCount.ToString() + (" / ") + _areaTargetCount;
             
               
             
