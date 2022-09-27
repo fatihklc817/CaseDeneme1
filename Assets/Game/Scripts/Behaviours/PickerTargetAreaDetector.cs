@@ -29,7 +29,7 @@ namespace Game.Scripts.Behaviours
 
         private void CheckMyInsideBox()
         {
-            Collider[] hitColliders = Physics.OverlapBox(gameObject.transform.position, new Vector3(3.5f, 10, 5), Quaternion.identity);
+            Collider[] hitColliders = Physics.OverlapBox(gameObject.transform.position, new Vector3(4f, 10, 5), Quaternion.identity);
 
             for (int i = 0; i < hitColliders.Length; i++)
             {
@@ -50,7 +50,7 @@ namespace Game.Scripts.Behaviours
 
             if (true)
 
-                Gizmos.DrawWireCube(transform.position, new Vector3(3.5f, 10, 5));
+                Gizmos.DrawWireCube(transform.position, new Vector3(4f, 10, 5));
         }
     }
 }
