@@ -15,11 +15,13 @@ namespace Game.Scripts.UI
             base.Initialize(uiManager);
 
             GameManager.EventManager.OnLevelSucceed += ShowPanel;
+            GameManager.EventManager.OnStartGame += HidePanel;
         }
 
         private void OnDestroy()
         {
-            GameManager.EventManager.OnLevelSucceed -= ShowPanel; 
+            GameManager.EventManager.OnLevelSucceed -= ShowPanel;
+            GameManager.EventManager.OnStartGame -= HidePanel;
         }
 
         public override void ShowPanel()
@@ -28,7 +30,12 @@ namespace Game.Scripts.UI
 
         }
 
-       
+        public override void HidePanel()
+        {
+            base.HidePanel();
+        }
+
+
 
     }
 }

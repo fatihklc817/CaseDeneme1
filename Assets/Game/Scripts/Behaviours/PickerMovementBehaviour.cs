@@ -11,7 +11,7 @@ namespace Game.Scripts.Behaviours
         [SerializeField] private float _forwardMoveSpeed;
         [SerializeField] private float _horizontalMoveSpeed;
 
-        private bool _isPickerAbleToMove = true;
+        private bool _isPickerAbleToMove;
 
         private PickerController _pickerController;
 
@@ -20,15 +20,23 @@ namespace Game.Scripts.Behaviours
         public void Initialize(PickerController pickerController)
         {
             _pickerController = pickerController;
+            _isPickerAbleToMove = false;
+            
         }
 
-       
+        private void Update()
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                _isPickerAbleToMove = true;
+            }
+        }
 
 
         void FixedUpdate()
         {
-
-
+            
+           
             if (_isPickerAbleToMove)
             {
 
@@ -63,6 +71,8 @@ namespace Game.Scripts.Behaviours
         {
             _isPickerAbleToMove = false;
         }
+
+       
 
     }
 }

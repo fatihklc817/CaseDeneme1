@@ -12,6 +12,7 @@ namespace Game.Scripts.Managers
         public event Action OnStartGame;
         public event Action OnLevelSucceed;
         public event Action OnLevelFailed;
+        public event Action OnStartPanelInput;
 
 
 
@@ -27,6 +28,7 @@ namespace Game.Scripts.Managers
             OnStartGame?.Invoke();
         }
 
+
         public void LevelSucceed()
         {
             OnLevelSucceed?.Invoke();
@@ -36,6 +38,13 @@ namespace Game.Scripts.Managers
         {
             OnLevelFailed?.Invoke();
         }
+
+        public void StartPanelInputDown()
+        {
+            OnStartPanelInput?.Invoke();
+        }
+
+        
 
     }
 }

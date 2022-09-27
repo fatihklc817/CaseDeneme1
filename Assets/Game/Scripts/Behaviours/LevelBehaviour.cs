@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using Game.Scripts.Controllers;
 using Game.Scripts.Behaviours;
+using Game.Scripts.Managers;
+
 
 public class LevelBehaviour : MonoBehaviour
 {
@@ -11,4 +13,9 @@ public class LevelBehaviour : MonoBehaviour
 
     [SerializeField] PickerController _pickerController;
     [SerializeField] TargetAreaBehaviour _targetAreaBehaviour;
+
+    public void Initialize(GameManager gameManager)
+    {
+        _pickerController.Initialize(gameManager);
+    }
 }

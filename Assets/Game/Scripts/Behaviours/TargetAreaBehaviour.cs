@@ -22,6 +22,7 @@ namespace Game.Scripts.Behaviours
         {
             _targetAreaManager = targetAreaManager;
             _counterTextMesh.text = _objectCount.ToString() + (" / ") + _areaTargetCount;
+            _checkObjectCounterCoroutine = null;
             
         }
 
@@ -39,7 +40,11 @@ namespace Game.Scripts.Behaviours
 
         public void StartCheckObjectCounterCo()
         {
-            StartCoroutine(CheckObjectCounterCO());
+            if (_checkObjectCounterCoroutine ==null)
+            {
+            _checkObjectCounterCoroutine =StartCoroutine(CheckObjectCounterCO());
+
+            }
         }
 
 

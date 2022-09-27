@@ -11,12 +11,14 @@ namespace Game.Scripts.UI
         public override void Initialize(UIManager uiManager)
         {
             base.Initialize(uiManager);
-            GameManager.EventManager.OnLevelFailed += LocalShowPanel;
+            GameManager.EventManager.OnLevelFailed += ShowPanel;
+            GameManager.EventManager.OnStartGame += HidePanel;
         }
 
         private void OnDestroy()
         {
-            GameManager.EventManager.OnLevelFailed -= LocalShowPanel;
+            GameManager.EventManager.OnStartGame -= HidePanel;
+            GameManager.EventManager.OnLevelFailed -= ShowPanel;
         }
 
         public override void ShowPanel()
@@ -24,9 +26,11 @@ namespace Game.Scripts.UI
             base.ShowPanel();
         }
 
-        private void LocalShowPanel()
+        public override void HidePanel()
         {
-            ShowPanel();
+            base.HidePanel();
         }
+
+        
     }
 }

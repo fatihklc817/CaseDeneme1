@@ -13,9 +13,13 @@ namespace Game.Scripts.Managers
 
         public override void Initialize(GameManager gameManager)
         {
-            base.Initialize(gameManager);
+            base.Initialize(gameManager);            
+        }
+
+        public void SetTargetArea()
+        {
+            TargetAreaBehaviour = GameManager.LevelManager.CurrentLevel.TargetAreaBehaviour;
             TargetAreaBehaviour.Initialize(this);
-            
         }
 
 
