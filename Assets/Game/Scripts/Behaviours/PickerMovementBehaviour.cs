@@ -70,6 +70,7 @@ namespace Game.Scripts.Behaviours
         public void StopPicker()
         {
             _isPickerAbleToMove = false;
+            _forwardMoveSpeed = 0f;
         }
 
        
