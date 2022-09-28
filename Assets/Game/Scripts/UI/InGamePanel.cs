@@ -36,7 +36,7 @@ public class InGamePanel : UIPanel
 
     public void UpdateIdMesh()
     {
-        LevelIDTextMesh.text =("Level " + PlayerData.CurrentLevelID.ToString());
+        LevelIDTextMesh.text =("Level " + (PlayerData.CurrentLevelID+1).ToString());
     }
 
 }
